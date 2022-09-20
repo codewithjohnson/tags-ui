@@ -9,17 +9,28 @@ const intialData = [
   "hope",
   "fun",
   "excellence",
-  "patience",
-  "goodness",
-  "faith",
-  "good",
+  // "patience",
+  // "goodness",
+  // "faith",
+  // "good",
 ];
-// <span>&#128473;</span>
 
 const App = () => {
   const [newTag, setNewTag] = useState("");
   const [tags, setTags] = useState(intialData);
+  const addTag = () => {
+    if (tags.length < 12) {
+      setTags((tags) => [...tags, newTag]);
+      setNewTag("");
+    }
+  };
 
+  const HandleTag = (e) => {
+    if (e.key === " " || e.key === "Enter") {
+      addTag();
+    }
+  };
+  const deletTags = () => {};
   return (
     <div>
       <div className="container">
@@ -36,10 +47,11 @@ const App = () => {
               placeholder="enter a new Tag"
               value={newTag}
               onChange={(e) => setNewTag(e.target.value)}
+              onKeyUp={HandleTag}
             />
           </div>
         </div>
-        
+
         <hr />
 
         <div className="result_container">
@@ -47,7 +59,9 @@ const App = () => {
             {tags.map((tag, index) => (
               <li key={index} className="tag">
                 <p>{tag}</p>
-                <span class="material-symbols-outlined">close</span>
+                <span className="delete">
+                  <span class="material-symbols-outlined">close</span>
+                </span>
               </li>
             ))}
           </div>
