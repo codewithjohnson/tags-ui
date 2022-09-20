@@ -9,10 +9,10 @@ const intialData = [
   "hope",
   "fun",
   "excellence",
-  // "patience",
-  // "goodness",
-  // "faith",
-  // "good",
+  "patience",
+  "goodness",
+  "faith",
+  "good",
 ];
 
 const App = () => {
@@ -48,6 +48,10 @@ const App = () => {
               </li>
             ))}
           </div>
+        </div>
+
+        <div className="footer">
+          <p className = "signature">designed by muyiwa johnson</p>
         </div>
       </div>
     </div>
