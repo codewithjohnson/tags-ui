@@ -14,6 +14,7 @@ const intialData = [
   "faith",
   "good",
 ];
+// <span>&#128473;</span>
 
 const App = () => {
   const [newTag, setNewTag] = useState("");
@@ -38,20 +39,22 @@ const App = () => {
             />
           </div>
         </div>
+        
+        <hr />
 
         <div className="result_container">
           <div className="tagList">
             {tags.map((tag, index) => (
               <li key={index} className="tag">
                 <p>{tag}</p>
-                <span>&#128473;</span>
+                <span class="material-symbols-outlined">close</span>
               </li>
             ))}
           </div>
         </div>
 
         <div className="footer">
-          <p className = "signature">designed by muyiwa johnson</p>
+          <p className="signature">designed by muyiwa johnson</p>
         </div>
       </div>
     </div>
