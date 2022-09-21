@@ -3,24 +3,22 @@ import React from "react";
 import { useState } from "react";
 
 const intialData = [
-  "love",
-  "joy",
-  "peace",
-  "hope",
-  "fun",
-  "excellence",
-  // "patience",
-  // "goodness",
-  // "faith",
-  // "good",
+  { tag: "love", id: 0 },
+  { tag: "joy", id: 1 },
+  { tag: "peace", id: 2 },
+  { tag: "hope", id: 4 },
+  { tag: "fun", id: 5 },
+  { tag: "excellence", id: 6 },
 ];
+let nextID = 7;
 
 const App = () => {
   const [newTag, setNewTag] = useState("");
   const [tags, setTags] = useState(intialData);
   const addTag = () => {
     if (tags.length < 12) {
-      setTags((tags) => [...tags, newTag]);
+      // setTags((tags) => [...tags, newTag]);
+      setTags([...tags, { tag: newTag, id: nextID++ }]);
       setNewTag("");
     }
   };
@@ -30,7 +28,9 @@ const App = () => {
       addTag();
     }
   };
-  const deletTags = () => {};
+  const deleteTag = (id) => {
+    setTags([...tags].filter((tag) => tag.id !== id));
+  };
   return (
     <div>
       <div className="container">
@@ -56,10 +56,15 @@ const App = () => {
 
         <div className="result_container">
           <div className="tagList">
-            {tags.map((tag, index) => (
-              <li key={index} className="tag">
-                <p>{tag}</p>
-                <span className="delete">
+            {tags.map((tag) => (
+              <li key={tag.id} className="tag">
+                <p>{tag.tag}</p>
+                <span
+                  className="delete"
+                  onClick={() => {
+                    deleteTag(tag.id);
+                  }}
+                >
                   <span class="material-symbols-outlined">close</span>
                 </span>
               </li>
