@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&family=Ubuntu:wght@400;500&display=swap");
+
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,15 +21,22 @@
 
 body {
   background-color: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
 }
 
 .container {
-  margin: 2rem auto;
-  width: 25rem;
+  width: 80%;
+  min-width: 400px;
+  max-width: 500px;
   background-color: white;
-  padding: 1rem 1.1rem;
+  padding: 2rem 1.1rem;
   border-radius: var(--radius);
   position: relative;
+
 }
 
 .header {
@@ -35,6 +44,7 @@ body {
   align-items: center;
   font-family: "Ubuntu", sans-serif;
   margin-bottom: 1.2rem;
+  /* padding: 10px 0px; */
 }
 
 h2 {
@@ -42,7 +52,7 @@ h2 {
   color: var(--color);
 }
 
-.header > span {
+.header>span {
   color: var(--color);
   user-select: none;
 }
@@ -63,7 +73,7 @@ h2 {
   padding: 0.5rem;
 }
 
-.input > span {
+.input>span {
   margin-right: 0.4rem;
   color: rgba(0, 0, 0, 0.356);
   user-select: none;
@@ -127,28 +137,28 @@ hr {
   color: whitesmoke;
 }
 
-.tag > p {
+.tag>p {
   margin-right: 0.5rem;
   color: rgba(0, 0, 0, 0.712);
 }
 
-.delete{
+.delete {
   display: flex;
   align-items: center;
 }
 
-.delete > span {
+.delete>span {
   color: rgba(0, 0, 0, 0.712);
   cursor: pointer;
   font-size: 1rem;
 }
 
-.tag > p:hover {
+.tag>p:hover {
   background-color: dodgerblue;
   color: whitesmoke;
 }
 
-.delete > span:hover {
+.delete>span:hover {
   color: white;
 }
 
